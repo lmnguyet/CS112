@@ -1,0 +1,46 @@
+\documentclass[../HW01.tex]{subfiles}
+
+\begin{document}
+\begin{tabular}{l l}
+    \begin{minipage}{0.7\textwidth}
+        \begin{lstlisting}[language=C]
+            s=0;
+            i=1;
+            while (i<=n) do
+                j=1;
+                while (j<=i*i) do
+                    s=s+1;
+                    j=j+1;
+                end do;
+                i=i+1;
+            end do;                     
+    \end{lstlisting}
+    \end{minipage} 
+    &
+    \begin{minipage}{0.5\textwidth}
+        \texttt{1 gán
+            \\1 gán
+            \\{\color{purple} $n+1$ ss}
+            \\$n$ gán
+            \\{\color{purple} $\alpha_i+1$ ss}
+            \\$\alpha_i$ gán
+            \\$\alpha_i$ gán
+            \\
+            \\$n$ gán
+            \\
+            \\
+        }
+    \end{minipage}
+\end{tabular}
+
+\noindent
+Gọi $\alpha_i$ là số lần lặp của vòng lặp \verb|while| trong (xét độc lập với \verb|while| ngoài).
+\\Số lần lặp $\alpha_i$ = số con $j$ chạy từ $1 \to i^2$, bước tăng là 1.
+\\$\Rightarrow \alpha_i=i^2-1+1=i^2$
+\begin{align*}
+    \text{Gán}(n)&=2+2n+\sum_{i=1}^{n}2\alpha_i=2+2n+2\sum_{i=1}^{n}i^2\\
+    &=2+2n+\frac{n(n+1)(2n+1)}{3}=\frac{2}{3}n^3+n^2+\frac{7}{3}n+2\\
+    \text{SoSánh}(n)&=n+1+\sum_{i=1}^{n}(\alpha_i+1)=n+1+\sum_{i=1}^{n}\alpha_i+\sum_{i=1}^{n}1\\
+    &=2n+1+\frac{n(n+1)(2n+1)}{6}=\frac{1}{3}n^3+\frac{1}{2}n^2+\frac{13}{6}n+1
+\end{align*}
+\end{document}

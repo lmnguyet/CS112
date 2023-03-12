@@ -1,0 +1,54 @@
+\documentclass[../HW01.tex]{subfiles}
+
+\begin{document}
+\begin{tabular}{l l}
+    \begin{minipage}{0.7\textwidth}
+        \begin{lstlisting}[language=C]
+            sum=0;
+            i=1;
+            while (i<=n) do
+                j=n-i*i;
+                while (j<=i*i) do
+                    sum=sum+i*j;
+                    j=j+1;
+                end do;
+                i=i+1;
+            end do;                     
+    \end{lstlisting}
+    \end{minipage} 
+    &
+    \begin{minipage}{0.5\textwidth}
+        \texttt{1 gán
+            \\1 gán
+            \\{\color{purple} $n+1$ ss}
+            \\$n$ gán
+            \\{\color{purple} $\alpha_i+1$ ss}
+            \\$\alpha_i$ gán
+            \\$\alpha_i$ gán
+            \\
+            \\$n$ gán
+            \\
+            \\
+        }
+    \end{minipage}
+\end{tabular}
+
+\noindent
+Gọi $\alpha_i$ là số lần lặp của vòng lặp \verb|while| trong (xét độc lập với \verb|while| ngoài).
+\\Số lần lặp $\alpha_i$ = số con $j$ chạy từ $n-i^2 \to i^2$, bước tăng là 1.
+\\$\Rightarrow \alpha_i=i^2-(n+i^2)+1=2i^2-n+1$
+\\Vòng lặp \verb|while| trong chỉ thực hiện khi $n-i^2 \leq i^2 \Rightarrow i^2 \geq \frac{n}{2}$
+\\Suy ra:
+\\ $$\alpha_i=\begin{cases}
+    0 &\text{, khi $i^2<\frac{n}{2}$}.\\
+    2i^2-n+1 &\text{, khi $i^2 \geq \frac{n}{2}$}.
+\end{cases}$$
+\begin{align*}
+    \text{Gán}(n)&=2+2n+\sum_{i=1}^{n}2\alpha_i=2+2n+2\sum_{i=\bigl\lceil\sqrt{\frac{n}{2}}\bigr\rceil}^{n}(2i^2-n+1)\\
+    &=2+2n+2(1-n)\left(n-\Biggl\lceil\sqrt{\frac{n}{2}}\Biggr\rceil+1\right)+4\left(\sum_{i=1}^{n}i^2-\text{\Large$\sum_{i=1}^{\bigl\lceil\sqrt{\frac{n}{2}}\bigr\rceil-1}$}i^2\right)\\
+    &=2+2n+2(1-n)\left(n-\Biggl\lceil\sqrt{\frac{n}{2}}\Biggr\rceil+1\right)\\
+    &+4\left(\frac{n(n+1)(2n+1)}{6}-\frac{\biggl\lceil\sqrt{\frac{n}{2}}\biggr\rceil\left(\biggl\lceil\sqrt{\frac{n}{2}}\biggr\rceil+1\right)\left(2\biggl\lceil\sqrt{\frac{n}{2}}\biggr\rceil+1\right)}{6}\right)\\
+    \text{SoSánh}(n)&=n+1+\sum_{i=1}^{n}(\alpha_i+1)=n+1+\sum_{i=1}^{n}\alpha_i+\sum_{i=1}^{n}1\\
+    &=2n+1+\sum_{i=\bigl\lceil\sqrt{\frac{n}{2}}\bigr\rceil}^{n}(2i^2-n+1)
+\end{align*}
+\end{document}

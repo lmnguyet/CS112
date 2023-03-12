@@ -1,0 +1,95 @@
+\documentclass[12pt]{report}
+\usepackage{vntex}
+\usepackage{blindtext}
+\usepackage{geometry} 
+\usepackage{graphicx}
+\usepackage{setspace}
+%\usepackage{ragged2e}
+%\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{xcolor}
+%\usepackage{relsize}
+
+\geometry{
+    a4paper,
+    margin=2.5cm
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+    \begin{titlepage}
+        \begin{center}
+            \textbf{\large TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN \\KHOA KHOA HỌC MÁY TÍNH\\}
+        
+            \vspace{1cm}
+            
+            \includegraphics[height=4cm]{./images/logo-uit.png}
+            \hspace{1cm}
+            \includegraphics[height=4cm]{./images/LogoCS.png}
+            
+            \textbf{\huge BÀI TẬP MÔN\\PHÂN TÍCH VÀ THIẾT KẾ THUẬT TOÁN
+            \vspace{1cm}
+            \Large\\HOMEWORK \#01:\\ ĐÁNH GIÁ THUẬT TOÁN DÙNG KỸ THUẬT TOÁN SƠ CẤP}
+
+            \vspace{1cm}
+            
+            \Large GV hướng dẫn: Huỳnh Thị Thanh Thương\\
+            \vspace{1cm}
+            Nhóm thực hiện:\\
+
+            \begin{enumerate}
+            \centering
+            \item Lê Minh Nguyệt\hspace{2cm}21521211
+            \item Hồ Đức Trưởng\hspace{2.3cm}21522730
+            \item Nguyễn Công Nguyên\hspace{0.8cm}21521200
+            \item Nguyễn Phương Tùng\hspace{0.8cm}21520524
+            \end{enumerate}
+            
+            \vfill    
+            TP.HCM, \today
+        \end{center}
+    \end{titlepage}
+
+    %\spacing{1.2}
+
+    \section*{Bài 1: Tính tổng hữu hạn}
+    \subfile{sections/Bai01.tex}
+    
+
+    \section*{Bài 2: Đếm số phép gán và so sánh}
+    \subfile{sections/Bai02.tex}
+
+    \section*{Bài 3: Đếm số phép gán và so sánh}
+    \subfile{sections/Bai03.tex}
+
+    %\blindtext[10]
+\end{document}
